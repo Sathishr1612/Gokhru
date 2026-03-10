@@ -85,3 +85,19 @@ const partnershipItems = document.querySelectorAll('.partnership-reveal');
   }, { threshold: 0.14 });
 
   partnershipItems.forEach((item) => partnershipObserver.observe(item));
+
+    /* =========================
+SERVICE SECTION
+========================== */
+  
+  const servicesItems = document.querySelectorAll('.services-reveal');
+
+  const servicesObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('services-show');
+      }
+    });
+  }, { threshold: 0.14 });
+
+  servicesItems.forEach((item) => servicesObserver.observe(item));
