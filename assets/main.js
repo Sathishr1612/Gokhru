@@ -1,5 +1,5 @@
- 
- /* =========================
+
+/* =========================
 NAVBAR AND FOOTER
 ========================== */
 
@@ -71,101 +71,101 @@ window.addEventListener("scroll", () => {
 
 });
 
-    /* =========================
+/* =========================
 HERO SECTION
 ========================== */
 
-  const heroItems = document.querySelectorAll('.hero-reveal');
+const heroItems = document.querySelectorAll('.hero-reveal');
 
-  const heroObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('hero-show');
-      }
-    });
-  }, { threshold: 0.15 });
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('hero-show');
+    }
+  });
+}, { threshold: 0.15 });
 
-  heroItems.forEach((item) => heroObserver.observe(item));
+heroItems.forEach((item) => heroObserver.observe(item));
 
 
 
-    /* =========================
- ABOUT SECTION
+/* =========================
+ABOUT SECTION
 ========================== */
 
 
-    const aboutItems = document.querySelectorAll('.about-reveal');
+const aboutItems = document.querySelectorAll('.about-reveal');
 
-  const aboutObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('about-show');
-      }
-    });
-  }, { threshold: 0.14 });
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('about-show');
+    }
+  });
+}, { threshold: 0.14 });
 
-  aboutItems.forEach((item) => aboutObserver.observe(item));
+aboutItems.forEach((item) => aboutObserver.observe(item));
 
 
-    /* =========================
+/* =========================
 PARTNER SECTION
 ========================== */
 
 const partnershipItems = document.querySelectorAll('.partnership-reveal');
 
-  const partnershipObserver = new IntersectionObserver((entries) => {
+const partnershipObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('partnership-show');
+    }
+  });
+}, { threshold: 0.14 });
+
+partnershipItems.forEach((item) => partnershipObserver.observe(item));
+
+/* =========================
+SERVICE SECTION
+========================== */
+
+const servicesItems = document.querySelectorAll('.services-reveal');
+
+const servicesObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('services-show');
+    }
+  });
+}, { threshold: 0.14 });
+
+servicesItems.forEach((item) => servicesObserver.observe(item));
+
+
+/* =========================
+SERVICE SECTION
+========================== */
+
+const whyItems = document.querySelectorAll('.why-reveal');
+
+if ('IntersectionObserver' in window) {
+  const whyObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('partnership-show');
+        entry.target.classList.add('why-show');
+        whyObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.14 });
 
-  partnershipItems.forEach((item) => partnershipObserver.observe(item));
-
-    /* =========================
-SERVICE SECTION
-========================== */
-  
-  const servicesItems = document.querySelectorAll('.services-reveal');
-
-  const servicesObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('services-show');
-      }
-    });
-  }, { threshold: 0.14 });
-
-  servicesItems.forEach((item) => servicesObserver.observe(item));
+  whyItems.forEach((item) => whyObserver.observe(item));
+} else {
+  whyItems.forEach((item) => item.classList.add('why-show'));
+}
 
 
-    /* =========================
-SERVICE SECTION
-========================== */
-
-   const whyItems = document.querySelectorAll('.why-reveal');
-
-  if ('IntersectionObserver' in window) {
-    const whyObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('why-show');
-          whyObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-
-    whyItems.forEach((item) => whyObserver.observe(item));
-  } else {
-    whyItems.forEach((item) => item.classList.add('why-show'));
-  }
-
-
-   /* =========================
+/* =========================
 TESTIMONIAYL SECTION
 ========================== */
-  const testimonialItems = document.querySelectorAll('.testimonial-reveal');
+const testimonialItems = document.querySelectorAll('.testimonial-reveal');
 
 const testimonialObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
