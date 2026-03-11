@@ -3,36 +3,79 @@
  NAVBAR AND FOOTERR START
 ========================== */
  
- const navbar = document.getElementById('mainNavbar');
+ /* =========================
+NAVBAR AND FOOTER
+========================== */
 
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 20) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
+/* Navbar shrink on scroll */
+const navbar = document.getElementById('mainNavbar');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.12 });
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 20) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    document.querySelectorAll('.navbar .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        const nav = document.getElementById('mainNav');
-        const bsCollapse = bootstrap.Collapse.getInstance(nav);
-        if (window.innerWidth < 992 && bsCollapse) {
-          bsCollapse.hide();
-        }
-      });
-    });
+/* Reveal animation */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.12 });
 
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+
+/* Close mobile menu after click */
+document.querySelectorAll('.navbar .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+
+    const nav = document.getElementById('mainNav');
+    const bsCollapse = bootstrap.Collapse.getInstance(nav);
+
+    if (window.innerWidth < 992 && bsCollapse) {
+      bsCollapse.hide();
+    }
+
+  });
+});
+
+
+/* Active nav link on scroll */
+const sections = document.querySelectorAll("section, footer");
+const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+
+  });
+
+});
 
     /* =========================
 HERO SECTION
@@ -101,3 +144,19 @@ SERVICE SECTION
   }, { threshold: 0.14 });
 
   servicesItems.forEach((item) => servicesObserver.observe(item));
+
+
+    /* =========================
+SERVICE SECTION
+========================== */
+   const whyItems = document.querySelectorAll('.why-reveal');
+
+  const whyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('why-show');
+      }
+    });
+  }, { threshold: 0.14 });
+
+  whyItems.forEach((item) => whyObserver.observe(item));
