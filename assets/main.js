@@ -149,14 +149,20 @@ SERVICE SECTION
     /* =========================
 SERVICE SECTION
 ========================== */
+
    const whyItems = document.querySelectorAll('.why-reveal');
 
-  const whyObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('why-show');
-      }
-    });
-  }, { threshold: 0.14 });
+  if ('IntersectionObserver' in window) {
+    const whyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('why-show');
+          whyObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
 
-    whyItems.forEach((item) => whyObserver.observe(item))
+    whyItems.forEach((item) => whyObserver.observe(item));
+  } else {
+    whyItems.forEach((item) => item.classList.add('why-show'));
+  }
