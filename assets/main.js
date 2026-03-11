@@ -159,4 +159,4 @@ SERVICE SECTION
     });
   }, { threshold: 0.14 });
 
-  whyItems.forEach((item) => whyObserver.observe(item));
+    whyItems.forEach((item) => whyObserver.observe(item))
