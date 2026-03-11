@@ -1,13 +1,8 @@
  
-    /* =========================
- NAVBAR AND FOOTERR START
-========================== */
- 
  /* =========================
 NAVBAR AND FOOTER
 ========================== */
 
-/* Navbar shrink on scroll */
 const navbar = document.getElementById('mainNavbar');
 
 window.addEventListener('scroll', function () {
@@ -19,7 +14,6 @@ window.addEventListener('scroll', function () {
 });
 
 
-/* Reveal animation */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -31,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
 
-/* Close mobile menu after click */
+
 document.querySelectorAll('.navbar .nav-link').forEach(link => {
   link.addEventListener('click', () => {
 
@@ -166,3 +160,19 @@ SERVICE SECTION
   } else {
     whyItems.forEach((item) => item.classList.add('why-show'));
   }
+
+
+   /* =========================
+TESTIMONIAYL SECTION
+========================== */
+  const testimonialItems = document.querySelectorAll('.testimonial-reveal');
+
+const testimonialObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('testimonial-show');
+    }
+  });
+}, { threshold: 0.14 });
+
+testimonialItems.forEach((item) => testimonialObserver.observe(item));
