@@ -399,14 +399,14 @@
 
     .mega-item:hover {
       background: #fff8f5 !important;
-      color: var(--brand-orange) !important;
+      color: var(--brand-purple-dark) !important;
       transform: translateX(8px) scale(1.01);
       box-shadow: 0 8px 20px rgba(255, 102, 0, 0.06);
     }
 
     .mega-item:hover i {
-      background: var(--brand-orange);
-      border-color: var(--brand-orange);
+      background: var(--brand-purple);
+      border-color: var(--brand-dark-purple);
       color: #fff;
       transform: scale(1.15) rotate(5deg);
     }
@@ -557,7 +557,7 @@
       }
 
       .mega-item:hover i {
-        background: var(--brand-orange) !important;
+        background: var(--brand-purple) !important;
         color: #fff !important;
       }
 
