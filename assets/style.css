@@ -2,7 +2,6 @@
       --brand-purple: #b51cab;
       --brand-purple-dark: #97158f;
       --brand-orange: #ff6600;
-      /* Added brand orange */
       --brand-charcoal: #2f2f35;
       --brand-charcoal-2: #3a3a42;
       --brand-text-soft: #5e5e64;
@@ -3132,10 +3131,6 @@ HERO SECTION start
 
       filter: grayscale(8%) contrast(1.02) saturate(.95);
     }
-
-
-
-
 
 
     /* =========================
