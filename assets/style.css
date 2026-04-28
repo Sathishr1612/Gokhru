@@ -1943,7 +1943,7 @@ HERO SECTION start
 ========================== */
     .services-section {
       position: relative;
-      padding: 88px 0 60px;
+      padding: 88px 0 50px;
       background: #ffffff;
       overflow: hidden;
     }
@@ -2802,7 +2802,7 @@ HERO SECTION start
 
     .final-cta-section {
       position: relative;
-      padding: 70px 0 80px;
+      padding: 60px 0 80px;
       background:
         radial-gradient(circle at 50% 0%, rgba(181, 28, 171, 0.08), transparent 26%),
         linear-gradient(180deg, #ffffff 0%, #fcfbfc 100%);
