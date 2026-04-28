@@ -13,8 +13,8 @@
   <meta name="description"
     content="Gokhru Investments provides expert financial advisory, demat account opening, mutual funds, and trading solutions in Mulund West, Mumbai. Trusted Sharekhan partner since 2004.">
 
-  <meta name="keywords"
-    content="Gokhru Investments, Share Market Advisor Mumbai, Demat Account Mulund, Mutual Funds Mumbai, Sharekhan Partner">
+  <meta name="keywords" content="Gokhru Investments, Share Market Advisor Mumbai, Demat Account Mulund, Mutual Funds Mumbai,  Mirea Assest Sharekhan
+ Partner">
 
   <meta name="author" content="Gokhru Investments">
 
@@ -27,13 +27,15 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
@@ -52,7 +54,8 @@
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -68,29 +71,277 @@
             <a class="nav-link" href="#about">About</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#partnership">Partnership</a>
+          <!-- Services Mega Menu -->
+          <li class="nav-item dropdown dropdown-mega">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Services <i class="fa-solid fa-chevron-down ms-1 small"></i>
+            </a>
+
+            <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
+              <div class="container-fluid">
+                <div class="mega-header">
+                  <h6 class="mega-title">Our Products &amp; Services</h6>
+                </div>
+
+                <div class="row gx-4 gy-1">
+
+                  <!-- ROW 1 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/equity-trading-account"
+                      target="_blank">
+                      <i class="fa-solid fa-chart-line"></i><span>Equity Trading</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/futures-trading-account"
+                      target="_blank">
+                      <i class="fa-solid fa-arrow-rotate-left"></i><span>Futures Trading</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/options-trading-account"
+                      target="_blank">
+                      <i class="fa-solid fa-arrow-trend-up"></i><span>Options Trading</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 2 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/commodity-trading-account"
+                      target="_blank">
+                      <i class="fa-solid fa-cube"></i><span>Commodity Trading</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/currency-trading-account"
+                      target="_blank">
+                      <i class="fa-solid fa-coins"></i><span>Currency Trading</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/ipo" target="_blank">
+                      <i class="fa-solid fa-rocket"></i><span>IPO</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 3 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/futures-and-options"
+                      target="_blank">
+                      <i class="fa-solid fa-layer-group"></i><span>Futures &amp; Options Solutions</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/algo-solutions" target="_blank">
+                      <i class="fa-solid fa-robot"></i><span>Algo Solutions</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/financial-solutions"
+                      target="_blank">
+                      <i class="fa-solid fa-hand-holding-dollar"></i><span>Financing Solutions</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 4 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/margin-funding" target="_blank">
+                      <i class="fa-solid fa-money-bill-transfer"></i><span>Margin Funding</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/nri-services" target="_blank">
+                      <i class="fa-solid fa-globe"></i><span>NRI Services</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-one" target="_blank">
+                      <i class="fa-solid fa-chart-pie"></i><span>Wealth Management Service</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 5 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/portfolio-management-services"
+                      target="_blank">
+                      <i class="fa-solid fa-briefcase"></i><span>Portfolio Management Service</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/pattern-finder" target="_blank">
+                      <i class="fa-solid fa-chart-column"></i><span>Pattern Finder</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/financial-blog/blogs"
+                      target="_blank">
+                      <i class="fa-solid fa-blog"></i><span>Financial Blogs</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#testimonials">Reviews</a>
+          </li>
+
+          <!-- Tools Mega Menu -->
+          <li class="nav-item dropdown dropdown-mega">
+            <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tools <i class="fa-solid fa-chevron-down ms-1 small"></i>
+            </a>
+
+            <div class="dropdown-menu mega-menu" aria-labelledby="toolsDropdown">
+              <div class="container-fluid">
+                <div class="mega-header">
+                  <h6 class="mega-title">Our Platforms &amp; Calculators</h6>
+                </div>
+
+                <div class="row gx-4 gy-1">
+
+                  <!-- ROW 1 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-trade-tiger"
+                      target="_blank">
+                      <i class="fa-solid fa-desktop"></i><span>TradeTiger</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-mobile-app"
+                      target="_blank">
+                      <i class="fa-solid fa-mobile-screen-button"></i><span>Sharekhan App</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-investiger"
+                      target="_blank">
+                      <i class="fa-solid fa-lightbulb"></i><span>InvesTiger</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 2 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-dial-and-trade"
+                      target="_blank">
+                      <i class="fa-solid fa-phone-volume"></i><span>Dial-N-Trade</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sharekhan-website"
+                      target="_blank">
+                      <i class="fa-solid fa-globe"></i><span>Sharekhan Website</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/trading-api" target="_blank">
+                      <i class="fa-solid fa-code"></i><span>Trading API</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 3 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item"
+                      href="https://www.sharekhan.com/trading-api/documentation/overview" target="_blank">
+                      <i class="fa-solid fa-book"></i><span>Trading API Documentation</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/trading-api/faq" target="_blank">
+                      <i class="fa-solid fa-circle-question"></i><span>Trading API FAQs</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item"
+                      href="https://www.sharekhan.com/financial-calculator/brokerage-calculator" target="_blank">
+                      <i class="fa-solid fa-calculator"></i><span>Brokerage Calculator</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 4 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/margin-calculator"
+                      target="_blank">
+                      <i class="fa-solid fa-percent"></i><span>Margin Calculator</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/span-calculator" target="_blank">
+                      <i class="fa-solid fa-chart-area"></i><span>SPAN Calculator</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/sip-calculator" target="_blank">
+                      <i class="fa-solid fa-piggy-bank"></i><span>SIP Investment Calculator</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 5 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/lumpsum-calculator"
+                      target="_blank">
+                      <i class="fa-solid fa-chart-area"></i><span>Lump sum Calculator</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/compare-mutual-funds"
+                      target="_blank">
+                      <i class="fa-solid fa-code"></i><span>Compare Mutual Funds</span>
+                    </a>
+                  </div>
+
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/goal-calculator" target="_blank">
+                      <i class="fa-solid fa-chart-area"></i><span>Financial Goal Calculator</span>
+                    </a>
+                  </div>
+
+                  <!-- ROW 6 -->
+                  <div class="col-md-4">
+                    <a class="dropdown-item mega-item" href="https://www.sharekhan.com/elss-calculator" target="_blank">
+                      <i class="fa-solid fa-chart-area"></i><span>ELSS Calculator</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#testimonials">Testimonials</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#get-started">Contact</a>
+            <a class="nav-link" href="https://research.sharekhan.com/" target="_blank">Research</a>
           </li>
 
         </ul>
 
         <div class="header-divider d-none d-lg-block"></div>
 
-        <a href="https://stockbroker-branch.sharekhan.com/mirae-asset-sharekhan-gokhru-investments-private-limited-i-stock-broker-mulund-west-mumbai-9350/Home"
-          target="_blank" class="header-cta mt-3 mt-lg-0">
-          Get Started Today
+        <a href="https://diy.sharekhan.com/app/Account/Register?grpcd=369&type=fr&grpid=424" target="_blank"
+          class="header-cta mt-3 mt-lg-0">
+          Open New Account
         </a>
 
       </div>
@@ -109,26 +360,26 @@
       <div class="row align-items-center g-4 g-lg-5">
         <div class="col-lg-6">
           <div class="hero-content hero-reveal">
-            <div class="hero-badge">
+            <!-- <div class="hero-badge">
               <span class="hero-badge-dot"></span>
               Gokhru Investments
-            </div>
+            </div> -->
 
             <h1 class="hero-title">
               Your Trusted Partner in
-              <span>Wealth Creation with Sharekhan</span>
+              <span class="gradient-text">Wealth Creation</span> with Mirea Asset Sharekhan
             </h1>
 
             <p class="hero-text">
-              Gokhru Investments is a leading investment advisory firm in Mumbai, offering personalized
-              financial solutions. Partnered with Sharekhan since 2004, we help you invest with
-              confidence.
+              Gokhru Investments is a leading investment advisory firm in Mumbai, offering personalized financial
+              solutions.
+              Partnered with Mirea Asset Sharekhan since 2004, we help you invest with confidence.
             </p>
 
             <div class="hero-actions">
-              <a href="https://stockbroker-branch.sharekhan.com/mirae-asset-sharekhan-gokhru-investments-private-limited-i-stock-broker-mulund-west-mumbai-9350/Home"
-                target="_blank" class="btn-brand hero-btn-main">
-                Get Started Today
+              <a href="https://diy.sharekhan.com/app/Account/Register?grpcd=369&type=fr&grpid=424" target="_blank"
+                class="btn-brand hero-btn-main">
+                Open New Account
               </a>
 
               <a href="#get-started" class="btn-light-brand hero-btn-alt">
@@ -244,7 +495,8 @@
                 <div class="partnership-stat-year">Since 2004</div>
 
                 <h3 class="partnership-stat-title">
-                  Partnered with Sharekhan
+                  Partnered with Mirea Assest Sharekhan
+
                 </h3>
 
                 <p class="partnership-stat-text">
@@ -259,9 +511,9 @@
               </div>
 
               <div class="partnership-stat-action">
-                <a href="https://stockbroker-branch.sharekhan.com/mirae-asset-sharekhan-gokhru-investments-private-limited-i-stock-broker-mulund-west-mumbai-9350/Home"
-                  target="_blank" class="btn-brand partnership-btn">
-                  Get Started Today
+                <a href="https://diy.sharekhan.com/app/Account/Register?grpcd=369&type=fr&grpid=424" target="_blank"
+                  class="btn-brand partnership-btn">
+                  Open New Account
                 </a>
               </div>
             </div>
@@ -276,11 +528,13 @@
             </div>
 
             <h2 class="partnership-title">
-              Our Partnership with Sharekhan
+              Our Partnership with Mirea Assest Sharekhan
+
             </h2>
 
             <p class="partnership-text">
-              Sharekhan is a Retail segment leading brokerage house in India, known for its innovative products and
+              Mirea Assest Sharekhan is a Retail segment leading brokerage house in India, known for its innovative
+              products and
               services. Their partnership with Gokhru Investments ensures you have access to
             </p>
 
@@ -369,6 +623,10 @@
             <p class="service-card-text">
               Protect your future with our comprehensive insurance solutions.
             </p>
+
+            <button type="button" class="btn-insurance-quote" data-bs-toggle="modal" data-bs-target="#insuranceModal">
+              Get Insurance Quote <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button>
           </div>
         </div>
 
@@ -391,7 +649,18 @@
             </p>
           </div>
         </div>
+
+
+        <div class="testimonial-action text-center mt-5 py-3">
+          <a href="https://www.sharekhan.com/financial-services" target="_blank" class="btn-brand testimonial-btn">
+            Explore All Services
+          </a>
+        </div>
+
+
       </div>
+
+    </div>
     </div>
   </section>
 
@@ -502,6 +771,7 @@
         <p class="testimonial-subtext">
           Trusted by clients who value expert advice, personalized service, and seamless investment support.
         </p>
+
       </div>
 
       <div id="testimonialCarousel" class="carousel slide testimonial-carousel testimonial-reveal"
@@ -555,6 +825,8 @@
                   </div>
                 </div>
               </div>
+
+
             </div>
           </div>
 
@@ -574,7 +846,12 @@
         </button>
 
       </div>
-
+      <div class="testimonial-action text-center mt-4">
+        <a href="https://www.google.com/search?sca_esv=da0365bf5fc892c6&hl=en-IN&gl=in&sxsrf=ANbL-n4P-y_8HApXVV7kquKB3bG_QnJNZQ:1777275972614&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qObch2wGm__AT_LWwriI4gJiteVpFd6F6Ubt0mgvs6AWyWOcqx3HiGoScAKnDgx-cdE1tD0IlWmKrpZLj-YLa9E267BDGRRl0jqRuNdZGNyFoSJ0dnh_gidpVRsMDdp_aVFuYbzk%3D&q=Mirae+Asset+Sharekhan+-+Authorised+Partner+Reviews&sa=X&ved=2ahUKEwj7z4_4xI2UAxXHGbkGHfgWK1oQ0bkNegQIMRAH&biw=1280&bih=585&dpr=1.5"
+          target="_blank" class="btn-brand testimonial-btn">
+          Read Google Reviews
+        </a>
+      </div>
     </div>
   </section>
 
@@ -620,7 +897,7 @@
         <div class="final-cta-action">
           <a href="https://stockbroker-branch.sharekhan.com/mirae-asset-sharekhan-gokhru-investments-private-limited-i-stock-broker-mulund-west-mumbai-9350/Home"
             target="_blank" rel="noopener noreferrer" class="btn-brand final-cta-btn">
-            Get Started Today
+            Contact Us
           </a>
         </div>
 
@@ -719,9 +996,9 @@
                 View Location
               </a>
 
-              <a href="https://stockbroker-branch.sharekhan.com/mirae-asset-sharekhan-gokhru-investments-private-limited-i-stock-broker-mulund-west-mumbai-9350/Home"
-                target="_blank" class="btn-brand">
-                Get Started Today
+              <a href="https://diy.sharekhan.com/app/Account/Register?grpcd=369&type=fr&grpid=424" target="_blank"
+                class="btn-brand">
+                Open New Account
               </a>
 
             </div>
@@ -736,11 +1013,120 @@
       <!-- Bottom -->
       <div class="footer-bottom">
         <span>© Gokhru Investments Pvt. Ltd. All Rights Reserved.</span>
-        <span>Sharekhan - Our Trusted Partner</span>
+        <span> Mirea Assest Sharekhan - Our Trusted Partner</span>
       </div>
 
     </div>
   </footer>
+
+  <!-- Insurance Modal -->
+  <div class="modal fade modal-premium" id="insuranceModal" tabindex="-1" aria-labelledby="insuranceModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="row g-0">
+          <!-- Left Side: Branding/Info (Hidden on small screens) -->
+          <div class="col-lg-4 d-none d-lg-block modal-sidebar">
+            <div class="modal-sidebar-content h-100 d-flex flex-column justify-content-between p-4 text-white">
+              <div>
+                <img src="assets/images/logo-g.webp" alt="Gokhru Logo" class="modal-sidebar-logo mb-4">
+                <h4 class="sidebar-title mb-3">Secure Your Future</h4>
+                <p class="sidebar-text small opacity-75">Get personalized insurance quotes tailored to your life goals
+                  and financial security.</p>
+              </div>
+              <div class="sidebar-features">
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="feature-icon-wrap me-2"><i class="fa-solid fa-check small"></i></div>
+                  <span class="small">Trusted Advisory</span>
+                </div>
+                <div class="feature-item d-flex align-items-center mb-3">
+                  <div class="feature-icon-wrap me-2"><i class="fa-solid fa-check small"></i></div>
+                  <span class="small">Fast Processing</span>
+                </div>
+                <div class="feature-item d-flex align-items-center">
+                  <div class="feature-icon-wrap me-2"><i class="fa-solid fa-check small"></i></div>
+                  <span class="small">Expert Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Side: Form -->
+          <div class="col-lg-8">
+            <div class="modal-header border-0 pb-0">
+              <div class="modal-title-wrap">
+                <h2 class="modal-title h4 fw-800" id="insuranceModalLabel">Get Insurance Quote</h2>
+                <p class="text-muted small mb-0">Fill in your details and our experts will reach out.</p>
+              </div>
+              <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+              <form id="insuranceForm" class="premium-form">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="fullName" class="form-label-small">Full Name</label>
+                    <div class="input-group-premium">
+                      <i class="fa-solid fa-user icon"></i>
+                      <input type="text" class="form-control-premium" id="fullName" placeholder="Enter your full name"
+                        required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="mobileNumber" class="form-label-small">Mobile Number</label>
+                    <div class="input-group-premium">
+                      <i class="fa-solid fa-phone icon"></i>
+                      <input type="tel" class="form-control-premium" id="mobileNumber" placeholder="Enter mobile number"
+                        required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="dob" class="form-label-small">Date of Birth</label>
+                    <div class="input-group-premium">
+                      <i class="fa-solid fa-calendar icon"></i>
+                      <input type="date" class="form-control-premium" id="dob" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="emailAddress" class="form-label-small">Email Address</label>
+                    <div class="input-group-premium">
+                      <i class="fa-solid fa-envelope icon"></i>
+                      <input type="email" class="form-control-premium" id="emailAddress" placeholder="Enter your email"
+                        required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="insuranceType" class="form-label-small">Type of Insurance</label>
+                  <div class="input-group-premium">
+                    <i class="fa-solid fa-shield-halved icon"></i>
+                    <select class="form-select-premium" id="insuranceType" required>
+                      <option value="" selected disabled>Select insurance type</option>
+                      <option value="Health Insurance">Health Insurance</option>
+                      <option value="Life Insurance">Life Insurance</option>
+
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-footer">
+                  <button type="submit" class="btn-submit-premium">
+                    <span>Submit Request</span>
+                    <i class="fa-solid fa-arrow-right ms-2"></i>
+                  </button>
+                  <p class="form-note mt-3 text-center small text-muted">
+                    <i class="fa-solid fa-lock me-1"></i> Your data is secure and confidential.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/main.js"></script>
