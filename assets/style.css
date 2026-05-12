@@ -718,6 +718,7 @@
       font-size: 14px;
       box-shadow: var(--shadow-soft);
       transition: all .28s ease;
+       border-color: var(--brand-purple);
     }
 
     .btn-light-brand:hover {
@@ -2801,7 +2802,7 @@ HERO SECTION start
 
     .final-cta-section {
       position: relative;
-      padding: 60px 0 80px;
+      padding: 60px 0 60px;
       background:
         radial-gradient(circle at 50% 0%, rgba(181, 28, 171, 0.08), transparent 26%),
         linear-gradient(180deg, #ffffff 0%, #fcfbfc 100%);
@@ -3466,3 +3467,90 @@ HERO SECTION start
         transform: translateY(0);
       }
     }
+
+
+
+    /* Contact Section Styling */
+.contact-card-premium {
+  border-radius: 32px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1) !important;
+  background: #fff;
+}
+
+.contact-info-sidebar {
+  background: linear-gradient(165deg, #b51cab 0%, #97158f 100%) !important;
+  background-color: #b51cab !important;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff !important;
+  min-height: 400px;
+}
+
+.contact-info-sidebar::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.icon-box-small {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Modal Backdrop Blur */
+.modal-backdrop.show {
+  opacity: 0.6;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.success-icon-wrap i {
+  filter: drop-shadow(0 10px 15px rgba(25, 135, 84, 0.2));
+}
+
+.animate__fadeIn {
+  animation: formFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes formFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.input-group-premium {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.error-msg {
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ff3b3b;
+  display: block;
+}
+
+.error-msg.d-none {
+  display: none !important;
+}

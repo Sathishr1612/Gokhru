@@ -1,4 +1,3 @@
-
 /* =========================
 NAVBAR AND FOOTER
 ========================== */
@@ -57,14 +56,11 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
       }, 80);
     });
 
-    /* --- MOBILE: prevent hover from firing (CSS already blocks it,
-       but we also stop any BS show triggered by mouseenter) --- */
-    // Nothing extra needed — CSS disables hover show on mobile.
+
   });
 }());
 
 
-/* Close mobile navbar when a non-dropdown link is clicked */
 document.querySelectorAll('.navbar .nav-link:not(.dropdown-toggle)').forEach(link => {
   link.addEventListener('click', () => {
 
@@ -218,49 +214,153 @@ const testimonialObserver = new IntersectionObserver((entries) => {
 testimonialItems.forEach((item) => testimonialObserver.observe(item));
 
 
+
+
+
 /* =========================
-   INSURANCE FORM HANDLING
+   FORM HANDLING (MODAL & PAGE)
    ========================= */
 
-const insuranceForm = document.getElementById('insuranceForm');
+const scriptURL = "https://script.google.com/macros/s/AKfycbyy6OrPYBC5QuH-vtAebsJk_svH1UgP8t5Xdq9N6qmWRY3k1Eaf8Z4yuvnMW29QVug/exec";
 
-if (insuranceForm) {
-  insuranceForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+const PhoneValidation = /^(?:\+91[\-\s]?|0)?[6-9]\d{9}$/;
+const EmailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    const submitBtn = this.querySelector('.btn-submit-premium');
-    const originalContent = submitBtn.innerHTML;
+function showFieldError(inputId, message) {
+  const input = document.getElementById(inputId);
+  if (!input) return false;
+  const error = input.parentElement.querySelector(".error-msg");
+  if (error) {
+    error.innerText = message;
+    error.classList.remove("d-none");
+  }
+  input.classList.add("is-invalid");
+  return false;
+}
 
-    // Show loading state
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-      <span>Processing...</span>
-    `;
+function clearFieldError(input) {
+  const error = input.parentElement.querySelector(".error-msg");
+  if (error) error.classList.add("d-none");
+  input.classList.remove("is-invalid");
+}
 
-    // Simulate API call
-    setTimeout(() => {
-      // Show success state
-      this.innerHTML = `
-        <div class="text-center py-5 animate__animated animate__fadeIn">
-          <div class="success-icon-wrap mb-4 mx-auto">
-            <i class="fa-solid fa-circle-check text-success display-1"></i>
-          </div>
-          <h3 class="fw-800 mb-3">Request Received!</h3>
-          <p class="text-muted">Thank you, <span class="fw-700 text-dark">${document.getElementById('fullName').value}</span>. Our insurance expert will contact you shortly at <span class="fw-700 text-dark">${document.getElementById('mobileNumber').value}</span>.</p>
-          <button type="button" class="btn btn-light-brand mt-4 px-5 py-3 rounded-pill fw-800" data-bs-dismiss="modal">
-            Close Window
-          </button>
-        </div>
-      `;
+function validateField(id) {
+  const input = document.getElementById(id);
+  if (!input) return true;
+  const value = input.value.trim();
 
-      // Optional: Close modal after a delay
-      // setTimeout(() => {
-      //   const modalEl = document.getElementById('insuranceModal');
-      //   const modal = bootstrap.Modal.getInstance(modalEl);
-      //   if (modal) modal.hide();
-      // }, 5000);
+  if (!value) {
+    return showFieldError(id, "This field is required.");
+  }
 
-    }, 1500);
+  if (input.type === "email" && !EmailValidation.test(value)) {
+    return showFieldError(id, "Please enter a valid email address.");
+  }
+
+  if (input.type === "tel" && !PhoneValidation.test(value)) {
+    return showFieldError(id, "Please enter a valid phone number.");
+  }
+
+  return true;
+}
+
+// Add input listeners for real-time clearing of errors
+document.querySelectorAll(".form-control").forEach((input) => {
+  input.addEventListener("input", function () {
+    clearFieldError(this);
   });
-}
+});
+
+/**
+ * Generic function to handle form submissions
+ * @param {string} btnId - ID of the submit button
+ * @param {string} successId - ID of the success message element
+ * @param {object} fieldIds - Object mapping generic keys to specific element IDs
+ */
+function handleFormSubmission(btnId, successId, fieldIds) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+
+  btn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Validate fields
+    const fieldsToValidate = [fieldIds.name, fieldIds.email, fieldIds.phone, fieldIds.dob];
+    let isValid = true;
+    for (const fieldId of fieldsToValidate) {
+      if (!validateField(fieldId)) {
+        isValid = false;
+        break;
+      }
+    }
+
+    if (!isValid) return;
+
+    // Validate Insurance Type Select
+    const select = document.getElementById(fieldIds.insurancetype);
+    if (!select || !select.value) {
+      showFieldError(fieldIds.insurancetype, "Please select an insurance type.");
+      return;
+    }
+
+    const successMsg = document.getElementById(successId);
+    successMsg.classList.remove("d-none", "text-danger");
+    successMsg.classList.add("text-success");
+    successMsg.innerText = "Processing your request...";
+
+    const formData = {
+      name: document.getElementById(fieldIds.name).value.trim(),
+      email: document.getElementById(fieldIds.email).value.trim(),
+      phone: document.getElementById(fieldIds.phone).value.trim(),
+      dob: document.getElementById(fieldIds.dob).value.trim(),
+      typeofinsurance: select.value,
+      sendmail: "true"
+    };
+
+    const fullURL = `${scriptURL}?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}&dob=${encodeURIComponent(formData.dob)}&typeofinsurance=${encodeURIComponent(formData.typeofinsurance)}&sendmail=${encodeURIComponent(formData.sendmail)}`;
+
+    fetch(fullURL)
+      .then((response) => {
+        if (response.ok) {
+          successMsg.innerText = "Form Submitted Successfully!";
+          // Clear fields
+          Object.values(fieldIds).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = "";
+          });
+          
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        successMsg.classList.remove("text-success");
+        successMsg.classList.add("text-danger");
+        successMsg.innerText = "Submission failed. Please try again.";
+      });
+  });
+}
+
+// Initialize On-Page Form
+handleFormSubmission("submitform", "formSuccess", {
+  name: "name",
+  email: "email",
+  phone: "phone",
+  dob: "dob",
+  insurancetype: "insurancetype"
+});
+
+// Initialize Modal Form
+handleFormSubmission("submitform1", "formSuccessModal", {
+  name: "modal_name",
+  email: "modal_email",
+  phone: "modal_phone",
+  dob: "modal_dob",
+  insurancetype: "modal_insurancetype"
+});
+
+
