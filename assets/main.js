@@ -26,13 +26,13 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
 /* ----- Mega menu: hover on desktop, click on mobile ----- */
 (function () {
-  const DESKTOP_BP = 992; // px — matches Bootstrap's lg breakpoint
+  const DESKTOP_BP = 992; 
 
   document.querySelectorAll('.dropdown-mega').forEach(function (li) {
     const toggle = li.querySelector('[data-bs-toggle="dropdown"]');
     if (!toggle) return;
 
-    // Lazily get (or create) Bootstrap Dropdown instance
+   
     function getBSDropdown() {
       return bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: 'outside' });
     }
@@ -41,7 +41,7 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
     function isDesktop() { return window.innerWidth >= DESKTOP_BP; }
 
-    /* --- DESKTOP hover open --- */
+    
     li.addEventListener('mouseenter', function () {
       if (!isDesktop()) return;
       clearTimeout(leaveTimer);
@@ -50,7 +50,6 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
     li.addEventListener('mouseleave', function () {
       if (!isDesktop()) return;
-      // Small delay so cursor can travel from trigger → panel without close
       leaveTimer = setTimeout(function () {
         getBSDropdown().hide();
       }, 80);
@@ -123,11 +122,9 @@ const heroObserver = new IntersectionObserver((entries) => {
 heroItems.forEach((item) => heroObserver.observe(item));
 
 
-
 /* =========================
 ABOUT SECTION
 ========================== */
-
 
 const aboutItems = document.querySelectorAll('.about-reveal');
 
@@ -212,9 +209,6 @@ const testimonialObserver = new IntersectionObserver((entries) => {
 
 
 testimonialItems.forEach((item) => testimonialObserver.observe(item));
-
-
-
 
 
 /* =========================

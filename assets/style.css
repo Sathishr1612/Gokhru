@@ -218,7 +218,7 @@
       width: 1.2rem;
       height: 1.2rem;
       filter: invert(24%) sepia(85%) saturate(2854%) hue-rotate(283deg) brightness(87%) contrast(100%);
-      /* Matches brand purple */
+
     }
 
     /* TEMP SPACE */
@@ -239,10 +239,8 @@
    DROPDOWN & MEGA MENU
 ========================== */
 
-    /* ---- DESKTOP: hover-open dropdown ---- */
-    @media (min-width: 992px) {
 
-      /* Base dropdown panel — hidden by default */
+    @media (min-width: 992px) {
       .dropdown-menu {
         display: block;
         border: 1px solid rgba(181, 28, 171, 0.08);
@@ -262,7 +260,7 @@
         pointer-events: none;
       }
 
-      /* Open state */
+
       .dropdown:hover>.dropdown-menu {
         opacity: 1;
         visibility: visible;
@@ -273,19 +271,16 @@
         pointer-events: auto;
       }
 
-      /* Bridge: invisible padding between the nav-link and the panel
-         prevents the hover gap that causes flickering */
+
       .dropdown-mega {
         position: static;
       }
 
       .dropdown-mega>.dropdown-toggle {
-        /* Extra bottom padding acts as the hover bridge */
         padding-bottom: 25px !important;
         margin-bottom: -15px;
       }
 
-      /* Mega menu panel: full-width, centred under the navbar */
       .dropdown-mega .mega-menu {
         position: absolute;
         left: 50%;
@@ -302,16 +297,15 @@
         left: 0;
         width: 100%;
         height: 4px;
-        /* background: linear-gradient(90deg, var(--brand-purple), var(--brand-purple-dark)); */
       }
 
-      /* Open state for mega menu — preserve the X centering */
+
       .dropdown-mega:hover .mega-menu {
         transform: translateX(-50%) translateY(0) scale(1);
       }
     }
 
-    /* ---- Shared styles (desktop + mobile) ---- */
+
     .mega-header {
       border-bottom: 1px solid rgba(181, 28, 171, 0.1);
       padding: 0.5rem 0 1.25rem 0;
@@ -411,7 +405,6 @@
       transform: scale(1.15) rotate(5deg);
     }
 
-    /* Chevron icon inside dropdown toggle */
     .dropdown-toggle::after {
       display: none !important;
     }
@@ -431,10 +424,8 @@
       color: var(--brand-purple);
     }
 
-    /* ---- MOBILE: Bootstrap click-toggle only ---- */
     @media (max-width: 991.98px) {
 
-      /* Disable ALL hover-based showing on mobile */
       .dropdown:hover>.dropdown-menu {
         opacity: 0;
         visibility: hidden;
@@ -474,7 +465,6 @@
         background: #f8f4f8;
       }
 
-      /* Reset dropdown panel to Bootstrap's mobile collapse style */
       .dropdown-menu {
         position: static !important;
         display: none;
@@ -494,7 +484,6 @@
         overflow: visible !important;
       }
 
-      /* Bootstrap adds .show when clicked */
       .dropdown-menu.show {
         display: block !important;
       }
@@ -506,7 +495,7 @@
         position: static !important;
       }
 
-      /* Remove the bridge padding on mobile */
+
       .dropdown-mega>.dropdown-toggle {
         padding-bottom: 12px !important;
         margin-bottom: 0;
@@ -718,7 +707,7 @@
       font-size: 14px;
       box-shadow: var(--shadow-soft);
       transition: all .28s ease;
-       border-color: var(--brand-purple);
+      border-color: var(--brand-purple);
     }
 
     .btn-light-brand:hover {
@@ -876,13 +865,12 @@
 HERO SECTION start
 ========================== */
 
-
     .hero-section {
       position: relative;
       padding: 140px 0 80px;
       background: linear-gradient(145deg, #fdfbff 0%, #f7f3ff 40%, #ffffff 100%);
       overflow: hidden;
-      font-family: 'Inter', 'Poppins', 'Manrope', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
 
@@ -993,7 +981,7 @@ HERO SECTION start
       position: relative;
       z-index: 3;
       padding-right: 14px;
-      font-family: 'Inter', 'Poppins', 'Manrope', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
     /* --- Badge --- */
@@ -1027,11 +1015,11 @@ HERO SECTION start
 
     /* --- Headline --- */
     .hero-title {
-      font-family: 'Inter', 'Poppins', 'Manrope', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-size: clamp(2.35rem, 4.5vw, 3.85rem);
       line-height: 1.20;
-      font-weight: 800;
-      letter-spacing: -0.025em;
+      font-weight: 900;
+      letter-spacing: -0.03em;
       color: #111827;
       max-width: 720px;
       margin: 0 0 8px;
@@ -1053,14 +1041,13 @@ HERO SECTION start
 
     /* --- Subtext --- */
     .hero-text {
-      font-family: 'Inter', 'Poppins', 'Manrope', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-size: 17px;
       line-height: 1.85;
       color: #6b7280;
       max-width: 540px;
       margin: 0 0 12px;
-      font-weight: 400;
-      /* Staggered fade-in: paragraph third */
+      font-weight: 500;
       animation: heroFadeUp 0.75s cubic-bezier(.22, .68, 0, 1.2) 0.4s both;
     }
 
@@ -1084,7 +1071,6 @@ HERO SECTION start
       padding-top: 18px;
       border-top: 1px solid rgba(139, 92, 246, .15);
       max-width: 640px;
-      /* Staggered fade-in: trust items last */
       animation: heroFadeUp 0.75s cubic-bezier(.22, .68, 0, 1.2) 0.7s both;
     }
 
@@ -1169,7 +1155,6 @@ HERO SECTION start
       width: 82%;
       height: 82%;
       border-radius: 50%;
-      /* background: radial-gradient(circle, rgba(181, 28, 171, .1), rgba(181, 28, 171, 0) 70%); */
       filter: blur(14px);
       z-index: 0;
     }
@@ -1182,10 +1167,9 @@ HERO SECTION start
       height: auto;
       object-fit: contain;
       display: block;
-      /* filter: drop-shadow(0 24px 40px rgba(47, 47, 53, .14)); */
     }
 
-    /* SMOOTH FLOAT + VISIBLE SHAKE */
+
     .hero-image-float {
       animation: heroFloatSoft 6s cubic-bezier(.45, .05, .55, .95) infinite;
       transform-origin: center center;
@@ -1937,7 +1921,6 @@ HERO SECTION start
     }
 
 
-
     /* =========================
    SERVICES SECTION
 ========================== */
@@ -2095,7 +2078,6 @@ HERO SECTION start
     }
 
 
-
     /* =========================
    WHY CHOOSE SECTION
 ========================== */
@@ -2125,7 +2107,7 @@ HERO SECTION start
       position: relative;
     }
 
-    /* LEFT SIDE */
+
     .why-left {
       max-width: 500px;
     }
@@ -2402,7 +2384,6 @@ HERO SECTION start
         line-height: 1.72;
       }
     }
-
 
     /* =========================
    TESTIMONIAL SECTION
@@ -2799,10 +2780,9 @@ HERO SECTION start
    CONTACT CTA SECTION
 ========================== */
 
-
     .final-cta-section {
       position: relative;
-      padding: 60px 0 60px;
+      padding: 60px 0 50px;
       background:
         radial-gradient(circle at 50% 0%, rgba(181, 28, 171, 0.08), transparent 26%),
         linear-gradient(180deg, #ffffff 0%, #fcfbfc 100%);
@@ -3267,7 +3247,7 @@ HERO SECTION start
       flex-shrink: 0;
     }
 
-    /* Form Styling */
+
     .premium-form {
       padding-top: 10px;
     }
@@ -3327,7 +3307,7 @@ HERO SECTION start
       transform: scale(1.1);
     }
 
-    /* Select Specifics */
+
     .form-select-premium {
       cursor: pointer;
       appearance: none;
@@ -3385,7 +3365,6 @@ HERO SECTION start
       letter-spacing: 0.2px;
     }
 
-    /* Modal Animation Upgrade */
     .modal.fade .modal-dialog {
       transform: translateY(40px) scale(0.96);
       opacity: 0;
@@ -3397,7 +3376,7 @@ HERO SECTION start
       opacity: 1;
     }
 
-    /* Close Button Customization */
+
     .modal-premium .btn-close {
       width: 40px;
       height: 40px;
@@ -3447,7 +3426,7 @@ HERO SECTION start
       }
     }
 
-    /* Success State Utilities */
+
     .success-icon-wrap i {
       filter: drop-shadow(0 10px 15px rgba(25, 135, 84, 0.2));
     }
@@ -3469,88 +3448,91 @@ HERO SECTION start
     }
 
 
+    .contact-card-premium {
+      border-radius: 32px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1) !important;
+      background: #fff;
+    }
 
-    /* Contact Section Styling */
-.contact-card-premium {
-  border-radius: 32px;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1) !important;
-  background: #fff;
-}
+    .contact-info-sidebar {
+      background: linear-gradient(165deg, #b51cab 0%, #97158f 100%) !important;
+      background-color: #b51cab !important;
+      position: relative;
+      overflow: hidden;
+      color: #ffffff !important;
+      min-height: 400px;
+    }
 
-.contact-info-sidebar {
-  background: linear-gradient(165deg, #b51cab 0%, #97158f 100%) !important;
-  background-color: #b51cab !important;
-  position: relative;
-  overflow: hidden;
-  color: #ffffff !important;
-  min-height: 400px;
-}
+    .contact-info-sidebar::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
 
-.contact-info-sidebar::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-}
-
-.icon-box-small {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-
-/* Modal Backdrop Blur */
-.modal-backdrop.show {
-  opacity: 0.6;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.success-icon-wrap i {
-  filter: drop-shadow(0 10px 15px rgba(25, 135, 84, 0.2));
-}
-
-.animate__fadeIn {
-  animation: formFadeIn 0.6s ease-out forwards;
-}
-
-@keyframes formFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .icon-box-small {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
 
 
-.input-group-premium {
-  position: relative;
-  margin-bottom: 16px;
-}
+    .modal-backdrop.show {
+      opacity: 0.6;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
 
-.error-msg {
-  position: absolute;
-  left: 0;
-  bottom: -22px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #ff3b3b;
-  display: block;
-}
+    .success-icon-wrap i {
+      filter: drop-shadow(0 10px 15px rgba(25, 135, 84, 0.2));
+    }
 
-.error-msg.d-none {
-  display: none !important;
-}
+    .animate__fadeIn {
+      animation: formFadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes formFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-section {
+      padding: 30px 0;
+    }
+
+
+    .input-group-premium {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .error-msg {
+      position: absolute;
+      left: 0;
+      bottom: -22px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #ff3b3b;
+      display: block;
+    }
+
+    .error-msg.d-none {
+      display: none !important;
+    }
